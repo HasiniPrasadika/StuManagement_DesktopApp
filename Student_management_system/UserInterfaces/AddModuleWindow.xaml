@@ -1,0 +1,64 @@
+﻿<Window x:Class="Student_management_system.UserInterfaces.AddModuleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Student_management_system.UserInterfaces"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="AddModuleWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <local:AddModuleWindowVM/>
+    </Window.DataContext>
+    <Grid Background="#455A64">
+        <Border Margin="20" Background="#EFEFEF" BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="5">
+            <Grid>
+                <TextBlock Foreground="#455A64" Text="Module Enrollment" FontSize="25" FontWeight="Bold" Margin="30 20 0 0"/>
+                <StackPanel Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Horizontal" Margin="30 80 20 0" Height="20" Width="700">
+                    <TextBlock FontSize="12" FontWeight="Bold" Text="{Binding SelectedStudent1.FirstName, UpdateSourceTrigger=PropertyChanged}" Width="202" Margin="10 0 0 0" Background="Transparent" Height="20" />
+                    <TextBlock FontSize="12" FontWeight="Bold" Text="{Binding SelectedStudent1.StuRegNo, UpdateSourceTrigger=PropertyChanged}" Width="355" Margin="0 0 0 0" Background="Transparent" Height="20" />
+                </StackPanel>
+
+                <StackPanel HorizontalAlignment="Center" Margin="0 120 0 0">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold" FontSize="15" HorizontalAlignment="Center" Text="All Modules"/>
+                                <ListBox Height="200" ItemsSource="{Binding ListAllModule}" SelectedItem="{Binding SelectedModule}"  Width="250">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Background="#FFD3D3D3" Orientation="Horizontal" HorizontalAlignment="Left" Width="250" >
+                                                <TextBlock Foreground="Black" Background="Transparent" Width="50" Margin="5" Text="{Binding ModCode}"/>
+                                                <TextBlock Foreground="Black" Background="Transparent" Width="200" Margin="5" Text="{Binding ModName}"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Vertical" Margin="10" VerticalAlignment="Center">
+                                <Button Content="Enroll" Width="100" Margin="10" Command="{Binding EnrollCommand}" Background="#455A64" Foreground="White"/>
+                                <Button Content="Delete" Width="100" Margin="10" Command="{Binding DeleteCommand}" Background="#455A64" Foreground="White"/>
+                            </StackPanel>
+
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold" FontSize="15" HorizontalAlignment="Center" Text="Enrolled Modules"/>
+                                <ListBox Height="200" ItemsSource="{Binding ListEnrollModules,UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedModule1}"  Width="250">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Background="#FFD3D3D3" Orientation="Horizontal" HorizontalAlignment="Left" Width="250" >
+                                                <TextBlock Foreground="Black" Background="Transparent" Width="50" Margin="5" Text="{Binding ModCode}"/>
+                                                <TextBlock Foreground="Black" Background="Transparent" Width="200" Margin="5" Text="{Binding ModName}"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,20 @@
+﻿Student_management_system
+
+
+winexe
+C#
+.cs
+D:\Semester 03\programming project\End\Programming_project_4054_4066\StudentMS_End\Student_management_system\obj\Debug\net6.0-windows\
+Student_management_system
+none
+false
+TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+D:\Semester 03\programming project\End\Programming_project_4054_4066\StudentMS_End\Student_management_system\App.xaml
+8254449017
+
+3854629568
+223195017284
+MainWindow.xaml;UserInterfaces\AddGradeWindow.xaml;UserInterfaces\AddLecturerWindow.xaml;UserInterfaces\AddModuleWindow.xaml;UserInterfaces\AddStudentWindow.xaml;UserInterfaces\AdminWindow.xaml;UserInterfaces\ResultWindow.xaml;UserInterfaces\StudentWindow.xaml;
+
+False
+
